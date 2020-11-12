@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+build/
+tasks.json
+foop.code-workspace
+.vscode/
+.DS_Store
