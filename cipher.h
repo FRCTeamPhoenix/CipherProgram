@@ -11,6 +11,6 @@ public:
     virtual std::string decode(std::string cipherText, std::string key = "") = 0;
 
     //returns if give key is valid (used for frontend)
-    virtual bool isValidKey() = 0;
+    virtual bool isValidKey(std::string key) = 0;
 
 };
