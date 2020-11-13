@@ -13,4 +13,7 @@ public:
     //returns if give key is valid (used for frontend)
     virtual bool isValidKey(std::string key) = 0;
 
+protected:
+    std::string m_keyPrompt = "Key: ";
+
 };
