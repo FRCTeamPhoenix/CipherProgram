@@ -27,7 +27,7 @@ std::string Autokey::encode(std::string baseText, std::string key) {
     std::string output = "";
 
     for (int i = 0; i < baseText.length(); i++) {
-        output += m_board[i][charToInt(totalKey[i])];
+        output += m_board[charToInt(totalKey[i])][charToInt(baseText[i])];
     }
 
     return output;

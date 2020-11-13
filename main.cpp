@@ -14,7 +14,7 @@ int main(){
     std::string key;
     std::cin >> key;
 
-    std::cout << a.encode(encode, key);
+    std::cout << a.encode(encode, key) << std::endl << std::endl;
 
     std::cout << "Decode text: ";
     std::string decode;
@@ -23,7 +23,7 @@ int main(){
     std::cout << "Key: ";
     std::cin >> key;
 
-    std::cout << a.decode(decode, key);
+    std::cout << a.decode(decode, key) << std::endl << std::endl;
 
     std::string h;
     std::cin >> h;
