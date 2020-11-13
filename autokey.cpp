@@ -9,11 +9,13 @@ Autokey::Autokey() {
         m_board.push_back(currLine);
         currLine = currLine.substr(1, currLine.length() - 1) + currLine[0];
     }
-    /*for (int i = 0; i < currLine.length(); i++) {
+    /*
+    for (int i = 0; i < currLine.length(); i++) {
         std::cout << m_board[i] << std::endl;
     }
     int h;
-    std::cin >> h;*/
+    std::cin >> h;
+    */
 }
 
 int Autokey::charToInt(char c) {
