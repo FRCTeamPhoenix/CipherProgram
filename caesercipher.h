@@ -4,6 +4,8 @@
 
 class CaeserCipher : public Cipher{
 public:
+    CaeserCipher();
+
     //returns a string of the encoded text
     virtual std::string encode(std::string baseText, std::string key = "") override;
 

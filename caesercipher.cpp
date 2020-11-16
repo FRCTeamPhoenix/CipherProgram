@@ -2,6 +2,11 @@
 
 #include <algorithm>
 
+CaeserCipher::CaeserCipher(){
+    //set the proper prompt
+    m_keyPrompt = "Enter a number to shift by: ";
+}
+
 std::string CaeserCipher::encode(std::string baseText, std::string key){
     //by this point, assume key and text are valid
 
