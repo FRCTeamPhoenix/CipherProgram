@@ -21,6 +21,7 @@ int main(){
     std::cin >> decode;
 
     std::cout << "Key: ";
+    key = "";
     std::cin >> key;
 
     std::cout << a.decode(decode, key) << std::endl << std::endl;

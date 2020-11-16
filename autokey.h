@@ -7,6 +7,7 @@ class Autokey: public Cipher {
     private:
         std::vector<std::string> m_board;
         int charToInt(char c);
+        char intToChar(int i);
         bool isValidChar(char c);
     public:
         Autokey();
