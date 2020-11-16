@@ -10,9 +10,16 @@ int main(){
     std::string encode;
     std::cin >> encode;
 
-    std::cout << "Key: ";
     std::string key;
-    std::cin >> key;
+    while(true) {
+        std::cout << "Key: ";
+        std::cin >> key;
+
+        if (a.isValidKey(key)) {
+            break;
+        }
+        std::cout << "Key is broken" << std::endl;
+    }
 
     std::cout << a.encode(encode, key) << std::endl << std::endl;
 
@@ -20,9 +27,16 @@ int main(){
     std::string decode;
     std::cin >> decode;
 
-    std::cout << "Key: ";
     key = "";
-    std::cin >> key;
+    while(true) {
+        std::cout << "Key: ";
+        std::cin >> key;
+
+        if (a.isValidKey(key)) {
+            break;
+        }
+        std::cout << "Key is broken" << std::endl;
+    }
 
     std::cout << a.decode(decode, key) << std::endl << std::endl;
 
