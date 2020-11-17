@@ -10,7 +10,7 @@ void CipherProgram::run(){
         cout << "Would you like to 'decode', 'encode', or 'quit'?" << endl;
         string targetMethod = "";
         //get the method the user would like to do
-        while(targetMethod != "decode" && targetMethod != "encode"){
+        while(targetMethod != "decode" && targetMethod != "encode" && targetMethod != "quit"){
             if(targetMethod != "")
                 cout <<"You must type 'decode', 'encode', or 'quit'"<<endl;
 
@@ -59,8 +59,24 @@ void CipherProgram::encodeInCipher(Cipher* cipher){
     getline(cin, targetText);
 
     string key = "";
+    //keep asking for key until the user types a valid one
+    do{
+        cout << cipher->getKeyPrompt();
+        getline(cin, key);
+    }while((!cipher->isValidKey(key)));
 
-    cout << "Encoded result: " << cipher->encode(targetText, key) << endl;
+    //process the input string to be all lowercase, no spaces, letters only
+    string processedString = "";
+    for(int i = 0; i < targetText.length(); i++){
+        //must be lowercase
+        char lowered = tolower(targetText[i]);
+        //must be alphabetical
+        if(lowered >= 'a' && lowered <= 'z'){
+            processedString+=lowered;
+        }
+    }
+
+    cout << "Encoded result: " << cipher->encode(processedString, key) << endl;
 }
 
 void CipherProgram::decodeInCipher(Cipher* cipher){

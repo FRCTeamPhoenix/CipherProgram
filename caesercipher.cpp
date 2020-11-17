@@ -4,7 +4,7 @@
 
 CaeserCipher::CaeserCipher(){
     //set the proper prompt
-    m_keyPrompt = "Enter a number to shift by: ";
+    m_keyPrompt = "Enter shift: ";
 }
 
 std::string CaeserCipher::encode(std::string baseText, std::string key){
@@ -31,7 +31,13 @@ std::string CaeserCipher::decode(std::string cipherText, std::string key){
     std::string out = "";
 
     for (char c : cipherText){
-        out += ((c - 'a') - shift) % 26 + 'a';
+        char newCharShift =  ((c - 'a') - shift) % 26;
+
+        //ensure that the chars remain in bounds
+        if(newCharShift >= 0)
+            out += newCharShift + 'a';
+        else
+            out += newCharShift + 'z' + 1;
     }
 
     return out;
