@@ -58,3 +58,10 @@ string Beaufort::code(string cipherText, string key = "") {
     }
     return output;
 }
+
+bool Beaufort::isValidKey(string key) {
+    if(key.length()>3)
+    return true;
+    else
+    return false;
+}
