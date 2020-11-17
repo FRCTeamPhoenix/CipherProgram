@@ -3,9 +3,9 @@
 #include "beaufort.h"
 
 int main(){
-    Beaufort cipher;
+    Beaufort cipher = Beaufort();
 
-    cipher.start;
+    cipher.start();
 
     return 0;
 }
