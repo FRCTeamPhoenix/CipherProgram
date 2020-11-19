@@ -40,13 +40,13 @@ string Vigenere::decode(string cipherText, string key){
         stackedKey += key;
     }
     stackedKey += key.substr(0, cipherText.length() - (key.length() * keyIterations)); // adds remainder onto stackedKey
-    cout << "stackedKey: " << stackedKey << endl;
+    cout << endl << stackedKey << endl << cipherText << endl;
 
     string result = "";
     // look under the character from stackedKey to find where it is the correct character from the input string
     // subtract value of given char by value of key char, look in 
     for(int i = 0; i < cipherText.length(); i++){
-        int index = getValue(cipherText[i] - getValue(key[i]));
+        int index = getValue(cipherText[i]) - getValue(stackedKey[i]);
         while(index < 0){
             index += 26;
         }

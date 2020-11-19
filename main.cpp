@@ -5,8 +5,9 @@
 
 int main(){
     Vigenere * v = new Vigenere();
-    cout << v->encode("testingwords", "abc") << endl;
-    // cout << v->decode("tfutjpgxqreu", "abc") << endl;
+    string encoded = v->encode("testingwords", "abcd");
+    cout << encoded << endl;
+    cout << v->decode(encoded, "abcd") << endl;
     delete v;
     return 0;
 }
