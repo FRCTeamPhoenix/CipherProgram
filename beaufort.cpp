@@ -8,7 +8,7 @@ Beaufort::Beaufort() {
 }
 
 string Beaufort::encode(string baseText, string key) {
-    string output = "";
+    string output;
     string table = "abcdefghijklmnopqrstuvwxyz";
     for(int i=0; i<baseText.size(); i++) {
         char charText = baseText[i];
@@ -18,25 +18,26 @@ string Beaufort::encode(string baseText, string key) {
 
             if(table[j] == charText) {
                 tempInt = j;
+                break;
             }
-
-            int shift = 0;
-            for(int k=0; k<tempInt; k++) {
+        }
+        int shift = 0;
+        for(int k=tempInt; k<tempInt+26; k++) {
                 int letter = k % 26;
                 if (table[letter] == charKey) {
                     break;
                 }
                 shift++;
-            }
-            output += table[shift];
         }
+         output += table[shift];
 
     }
+    cout << output << endl;
     return output;
 }
 
 string Beaufort::decode(string cipherText, string key) {
-    string output = "";
+    string output;
     string table = "abcdefghijklmnopqrstuvwxyz";
     for(int i=0; i<cipherText.size(); i++) {
         char charText = cipherText[i];
@@ -46,10 +47,11 @@ string Beaufort::decode(string cipherText, string key) {
 
             if(table[j] == charText) {
                 tempInt = j;
+                break;
             }
-
-            int shift = 0;
-            for(int k=0; k<tempInt; k++) {
+        }
+        int shift = 0;
+            for(int k=tempInt; k<tempInt+26; k++) {
                 int letter = k % 26;
                 if (table[letter] == charKey) {
                     break;
@@ -57,9 +59,9 @@ string Beaufort::decode(string cipherText, string key) {
                 shift++;
             }
             output += table[shift];
-        }
 
     }
+    cout << output << endl;
     return output;
 }
 
