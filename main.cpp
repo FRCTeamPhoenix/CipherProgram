@@ -1,11 +1,18 @@
 #include <iostream>
 #include <string>
 #include "beaufort.h"
+#include "cipherprogram.h"
+#include "caesercipher.h"
 
 int main(){
-    Beaufort cipher = Beaufort();
+    CipherProgram program;
+    CaeserCipher caesar;
+    Beaufort beaufort;
 
-    cipher.start();
+    program.addCipher("caesar", &caesar);
+    program.addCipher("beaufort", &beaufort);
+    program.run();
+    
 
     return 0;
 }

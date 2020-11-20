@@ -32,7 +32,7 @@ string Beaufort::encode(string baseText, string key) {
          output += table[shift];
 
     }
-    cout << output << endl;
+    //cout << output << endl;
     return output;
 }
 
@@ -61,7 +61,7 @@ string Beaufort::decode(string cipherText, string key) {
             output += table[shift];
 
     }
-    cout << output << endl;
+    //cout << output << endl;
     return output;
 }
 
