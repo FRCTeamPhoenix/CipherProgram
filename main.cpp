@@ -13,6 +13,7 @@ int main(){
     Beaufort beaufort;
     Vigenere vigenere;
     Autokey autokey;
+    
     program.addCipher("caesar", &caesar);
     program.addCipher("vigenere", &vigenere);
     program.addCipher("autokey", &autokey);
