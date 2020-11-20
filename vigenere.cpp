@@ -4,7 +4,11 @@
 #include <ctype.h>
 using namespace std;
 
-char LETTER[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+Vigenere::Vigenere(){
+    m_keyPrompt = "Enter string of alphabetic characters (no spaces): ";
+}
+
+const char LETTER[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
 int getValue(char c){
     for(int i = 0; i < 26; i++){
@@ -14,6 +18,8 @@ int getValue(char c){
     }
     return -1;
 }
+
+
 
 string Vigenere::encode(string baseText, string key){
     if(isValidKey(key)){

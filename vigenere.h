@@ -5,7 +5,7 @@ using namespace std;
 
 class Vigenere : public Cipher{
 public:
-    // value is equal to index
+    Vigenere();
 
     //returns a string of the encoded text
     virtual string encode(string baseText, string key = "") override;
