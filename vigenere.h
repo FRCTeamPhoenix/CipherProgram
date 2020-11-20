@@ -3,7 +3,7 @@
 #include "cipher.h"
 using namespace std;
 
-class Vigenere : Cipher{
+class Vigenere : public Cipher{
 public:
     // value is equal to index
 

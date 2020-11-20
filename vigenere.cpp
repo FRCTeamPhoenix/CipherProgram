@@ -32,7 +32,7 @@ string Vigenere::encode(string baseText, string key){
             }
             result += LETTER[totalVal];
         }
-        cout << stackedKey << endl << baseText << endl;
+        //cout << stackedKey << endl << baseText << endl;
         return result;
     }else{
         return "Please enter a valid key!";
@@ -46,7 +46,7 @@ string Vigenere::decode(string cipherText, string key){
             stackedKey += key;
         }
         stackedKey += key.substr(0, cipherText.length() - (key.length() * keyIterations)); // adds remainder onto stackedKey
-        cout << endl << stackedKey << endl << cipherText << endl;
+        //cout << endl << stackedKey << endl << cipherText << endl;
 
         string result = "";
         // look under the character from stackedKey to find where it is the correct character from the input string
@@ -67,6 +67,7 @@ bool Vigenere::isValidKey(string key){
         if (!isalpha(key[i])){
             return false;
         }
+        key[i] = tolower(key[i]);
     }
     return true;
 }
