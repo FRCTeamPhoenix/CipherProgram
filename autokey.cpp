@@ -5,6 +5,7 @@
 
 Autokey::Autokey() {
     std::string currLine = "abcdefghijklmnopqrstuvwxyz";
+    m_keyPrompt = "Enter letter only key: ";
     for (int i = 0; i < currLine.length(); i++) {
         m_board.push_back(currLine);
         currLine = currLine.substr(1, currLine.length() - 1) + currLine[0];
