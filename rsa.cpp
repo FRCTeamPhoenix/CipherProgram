@@ -2,38 +2,25 @@
 #include <ctype.h>
 #include <string>
 #include <vector>
+#include "rsa.h"
 #include "cipher.h"
 
-using namespace std;
-
-class rsa{
-    public:
-        virtual void decode(string message);
-        virtual void encode(string message);
-    
+rsa::rsa(){
+    m_keyPrompt = "enter key";
 };
 
-void rsa::encode(string message){
+std::string rsa::encode(std::string baseText, std::string key){
     double p;
     double q;
-    string message;
-    cin >> message;
-    vector<char> split_message;
-     for (char ch : message)
-    {
-        // Copy only alphabetical characters and numeric digits
-        if (isalnum(ch))
-        {
-            split_message.push_back(ch);
-        }
-    }
-
-    cin >> p;
-    cin >> q;
+    std::string message;
+    std::cin >> message;
+    std::vector<char> split_message;
+    std::cin >> p;
+    std::cin >> q;
     double n = p*q;
     double phi = (p-1)*(q-1);
     double e;
-    cin >> e;
+    std::cin >> e;
     if(1<e<phi) {
         
     }
@@ -43,17 +30,13 @@ void rsa::encode(string message){
 
 }
 
-void rsa::decode(string message){
+std::string rsa::decode(std::string cipherText, std::string key){
 
 }
 
+bool rsa::isValidKey(std::string key){
+    return !key.empty() && std::find_if(key.begin(), key.end(), [](unsigned char c) { return !std::isdigit(c); }) == key.end();
+}
 int main(){
-    rsa msg;
-
-
-    new rsa();
-
-
-    rsa::encode();
     return 0;
 }
