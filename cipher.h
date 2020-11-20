@@ -17,5 +17,4 @@ public:
 
 protected:
     std::string m_keyPrompt = "Key: ";
-
 };
