@@ -4,7 +4,7 @@
 using namespace std;
 
 Beaufort::Beaufort() {
-    m_keyPrompt = "Enter Key: ";
+    m_keyPrompt = "Enter Key(all lowercase letters): ";
 }
 
 string Beaufort::encode(string baseText, string key) {
