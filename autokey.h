@@ -9,7 +9,6 @@ class Autokey: public Cipher {
         int charToInt(char c);
         char intToChar(int i);
         bool isValidChar(char c);
-        std::string m_keyPrompt;
     public:
         Autokey();
         //returns a string of the encoded text
