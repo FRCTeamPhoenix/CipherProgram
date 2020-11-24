@@ -31,8 +31,10 @@
 *.out
 *.app
 
+.vscode/
 build/
 tasks.json
 foop.code-workspace
 .vscode/
 .DS_Store
+main.cpp
