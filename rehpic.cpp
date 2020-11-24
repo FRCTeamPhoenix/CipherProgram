@@ -20,15 +20,7 @@ string Rehpic::encode(string baseText, string key) {
 }
 
 string Rehpic::decode(string cipherText, string key) {
-    string output;
-    int n = cipherText.length();
-
-    for(int i=0; i < n/2; i++) {
-        swap(cipherText[i], cipherText[n-i-1]);
-    }
-    output = cipherText;
-    
-    return output;
+    return encode(cipherText, "");
 }
 
 bool Rehpic::isValidKey(string key) {
