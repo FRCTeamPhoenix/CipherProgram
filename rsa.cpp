@@ -1,42 +1,51 @@
 #include <iostream>
 #include <ctype.h>
+#include <cstring>
 #include <string>
 #include <vector>
+#include <math.h>
 #include "rsa.h"
-#include "cipher.h"
 
 rsa::rsa(){
-    m_keyPrompt = "enter key";
+    m_keyPrompt = "enter values for p and q separated by a comma. e.g. 12,12:";
 };
 
 std::string rsa::encode(std::string baseText, std::string key){
-    double p;
-    double q;
-    std::string message;
-    std::cin >> message;
-    std::vector<char> split_message;
-    std::cin >> p;
-    std::cin >> q;
+    
+    std::string delimiter = ",";
+    std::string pparse = key.substr(0, key.find(delimiter));
+    std::string qparse= key.substr(key.find(delimiter)+1, -1); 
+    int p = stoi(pparse);
+    int q = stoi(qparse);
+    std::cout << p << " " << q << '\n';
     double n = p*q;
     double phi = (p-1)*(q-1);
     double e;
+    std::cout << "enter value for e" << '\n';
     std::cin >> e;
-    if(1<e<phi) {
-        
+    char cic;
+    for (char c : baseText){
+        double ic = (double)c;
+        double enc = pow(ic,e);
+        std::cout << enc << '\n';
+        cic = (char)enc;
     }
-    else {
-        exit(0);
-    } 
-
+    std::cout << cic << '\n';
+    //double d1 = 1/e;
+    //double d=fmod(d1,phi);
+return "done";
 }
 
 std::string rsa::decode(std::string cipherText, std::string key){
-
+    return "bob";
 }
 
 bool rsa::isValidKey(std::string key){
-    return !key.empty() && std::find_if(key.begin(), key.end(), [](unsigned char c) { return !std::isdigit(c); }) == key.end();
+    return true;
 }
+
 int main(){
+    rsa text;
+    text.encode("asdlkfjaflkds", "14,15");
     return 0;
 }
