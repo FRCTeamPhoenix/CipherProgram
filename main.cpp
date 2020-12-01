@@ -2,13 +2,13 @@
 #include <string>
 
 #include "cipherprogram.h"
-#include "caesercipher.h"
+#include "rsa.h"
 
 int main(){
     CipherProgram program;
-    CaeserCipher caesar;
+    rsa rsa;
 
-    program.addCipher("caesar", &caesar);
+    program.addCipher("rsa", &rsa);
     program.run();
     
     return 0;
