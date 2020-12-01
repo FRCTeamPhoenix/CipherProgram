@@ -9,6 +9,7 @@
 #include "vigenere.h"
 #include "rehpic.h"
 #include "chartointcipher.h"
+#include "rsa.h"
 
 int main(){
     CipherProgram program;
@@ -19,6 +20,7 @@ int main(){
     Rehpic rehpic;
     Chartointcipher chartointcipher;
     RunningKeyCipher running;
+    rsa rsa;
 
     program.addCipher("caesar", &caesar);
     program.addCipher("vigenere", &vigenere);
@@ -27,7 +29,7 @@ int main(){
     program.addCipher("rehpic", &rehpic);
     program.addCipher("chartoint", &chartointcipher);
     program.addCipher("running", &running);
-
+    program.addCipher("rsa", &rsa)
     program.run();
     
 
